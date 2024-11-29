@@ -17,7 +17,7 @@ export default function LoginForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, senha: password }),
       });
 
       if (response.ok) {
