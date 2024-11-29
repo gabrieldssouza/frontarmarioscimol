@@ -12,7 +12,7 @@ export default function LockersPage({ params }: { params: { buildingId, floor} }
  async function getData() {
     try {
      console.log("id2", buildingId)
-      const response = await axios.get(`http://localhost:3001/armario/local/${buildingId}`);
+      const response = await axios.get(`https://apiarmarios.vercel.app/armario/local/${buildingId}`);
       console.log(response.data);
       setData(response.data)
       console.log("resp", data)

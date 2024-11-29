@@ -36,7 +36,7 @@ export default function LockerGrid({ buildingId, floor, lockersData }) {
   // Função para buscar os detalhes do armário
   const fetchLockerDetails = async (armarioId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/alocacao/id/${armarioId}`);
+      const response = await axios.get(`https://apiarmarios.vercel.app//alocacao/id/${armarioId}`);
       const data = response.data;
   
       // Verifica se a data de validade já passou e atualiza o status
@@ -116,7 +116,7 @@ export default function LockerGrid({ buildingId, floor, lockersData }) {
     };
     console.log("editando edit p.4", newdata);
     try {
-      const response = await axios.put('http://localhost:3001/editarLocacao', newdata);
+      const response = await axios.put('https://apiarmarios.vercel.app/editarLocacao', newdata);
       console.log('Bem editado com sucesso:', response.data);
     } catch (error) {
       console.error('Erro ao editar bem:', error);
@@ -133,7 +133,7 @@ export default function LockerGrid({ buildingId, floor, lockersData }) {
     };
     console.log("editando p.3", newdata);
     try {
-      const response = await axios.post('http://localhost:3001/alocar', newdata);
+      const response = await axios.post('https://apiarmarios.vercel.app/alocar', newdata);
       console.log('Bem criado com sucesso:', response.data);
     } catch (error) {
       console.error('Erro ao criar bem:', error);
